@@ -54,7 +54,7 @@ python app.py
 ```
 
 ## Example Video Demo
-#### Facebook: [youtube](youtube)
+#### Facebook: [youtube](https://www.youtube.com/watch?v=7eKcKnWcb5g)
 
 ## Contact us at
 #### Facebook: [https://www.facebook.com/james.ndc](https://www.facebook.com/james.ndc)
