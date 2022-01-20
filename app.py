@@ -21,6 +21,7 @@ class MyBot():
         self.start_time = 0
         self.time_loop_swap = 0
         self.time_loop_refresh = 0
+        self.isConnect = int(self.configObject["POSITIONS"]["IS_CONNECT"])
         self.posConnectWallet = (int(self.configObject["POSITIONS"]["CONNECT_WALLET_X"]), int(
             self.configObject["POSITIONS"]["CONNECT_WALLET_Y"]))
         self.posMetaSign = (int(self.configObject["POSITIONS"]["META_SIGN_X"]), int(
@@ -138,7 +139,10 @@ class MyBot():
             self.processing = False
 
     def run(self):
-        self.startGame()
+        if self.isConnect == 1:
+            self.startGame()
+        else:
+            self.start_time = int(time.time() * 1000)
         while True:
             self.loopSwapPage()
             self.loopRefreshStamina()
