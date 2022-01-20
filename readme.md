@@ -3,10 +3,10 @@
 ## Step 1 Download and install python 3.8.10
 [LINK DOWNLOAD](https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe)
 
-## Step 2 Download and install Visual Studio Code
+## Step 2 Download and install Visual Studio Code (Optional)
 [LINK DOWNLOAD](https://code.visualstudio.com/)
 
-## Step 3 Download source code (Optional)
+## Step 3 Download source code
 [LINK DOWNLOAD](https://github.com/jamesncm123/bot-bombcrypto.git)
 
 ## Step 4 Open source code with Visual Studio Code (Optional)
