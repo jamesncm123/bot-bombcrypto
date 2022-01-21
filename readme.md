@@ -1,5 +1,11 @@
 # Bot Bombcrypto
 
+# Source Code Updated Example Video Demo 2 + line notify
+#### Youtube: [youtube](https://youtu.be/-SBX9e3O_0Q)
+
+## Line notify
+[https://notify-bot.line.me/](https://notify-bot.line.me/)
+
 ## Step 1 Download and install python 3.8.10
 [LINK DOWNLOAD](https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe)
 
@@ -20,11 +26,14 @@ pip install -r requirements.txt
 ## Step 6 Config position
 #### Open file config.ini and fix position
 ```
+[LINE_NOTIFY]
+TOKEN = 
+[IMAGE_POSITION]
+LEFT_TOP_X = 79
+LEFT_TOP_Y = 134
+RIGHT_BUTTOM_X = 866
+RIGHT_BUTTOM_Y = 640
 [POSITIONS]
-CONNECT_WALLET_X = 470
-CONNECT_WALLET_Y = 520
-META_SIGN_X = 855
-META_SIGN_Y = 555
 HEROES_X = 802
 HEROES_Y = 563
 RESET_X = 453
@@ -53,8 +62,11 @@ Note: Position name reference from file in folder img
 python app.py
 ```
 
-## Example Video Demo
+## Example Video Demo 1
 #### Youtube: [youtube](https://www.youtube.com/watch?v=7eKcKnWcb5g)
+
+## Example Video Demo 2 + line notify
+#### Youtube: [youtube](https://youtu.be/-SBX9e3O_0Q)
 
 ## Contact us at
 #### Facebook: [https://www.facebook.com/james.ndc](https://www.facebook.com/james.ndc)
