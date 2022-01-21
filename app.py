@@ -23,11 +23,19 @@ class MyBot():
         self.time_loop_swap = 0
         self.time_loop_refresh = 0
         self.token_notify = self.configObject["LINE_NOTIFY"]["TOKEN"]
-        self.isConnect = int(self.configObject["POSITIONS"]["IS_CONNECT"])
-        self.posConnectWallet = (int(self.configObject["POSITIONS"]["CONNECT_WALLET_X"]), int(
-            self.configObject["POSITIONS"]["CONNECT_WALLET_Y"]))
-        self.posMetaSign = (int(self.configObject["POSITIONS"]["META_SIGN_X"]), int(
-            self.configObject["POSITIONS"]["META_SIGN_Y"]))
+        # self.isConnect = int(self.configObject["POSITIONS"]["IS_CONNECT"])
+        # self.posConnectWallet = (int(self.configObject["POSITIONS"]["CONNECT_WALLET_X"]), int(
+        #     self.configObject["POSITIONS"]["CONNECT_WALLET_Y"]))
+        # self.posMetaSign = (int(self.configObject["POSITIONS"]["META_SIGN_X"]), int(
+        #     self.configObject["POSITIONS"]["META_SIGN_Y"]))
+        self.posImageLeftTopX = int(
+            self.configObject["IMAGE_POSITION"]["LEFT_TOP_X"])
+        self.posImageLeftTopY = int(
+            self.configObject["IMAGE_POSITION"]["LEFT_TOP_Y"])
+        self.posImageRightButtomX = int(
+            self.configObject["IMAGE_POSITION"]["RIGHT_BUTTOM_X"])
+        self.posImageRightButtomY = int(
+            self.configObject["IMAGE_POSITION"]["RIGHT_BUTTOM_Y"])
         self.posHeroes = (int(self.configObject["POSITIONS"]["HEROES_X"]), int(
             self.configObject["POSITIONS"]["HEROES_Y"]))
         self.posReset = (int(self.configObject["POSITIONS"]["RESET_X"]), int(
@@ -53,7 +61,8 @@ class MyBot():
 
     def capture_screen(self):
         try:
-            self.box = (450, 378, 1086, 850)
+            self.box = (self.posImageLeftTopX, self.posImageLeftTopY,
+                        self.posImageRightButtomX, self.posImageRightButtomY)
             img = self.grab.grab(self.box)
             img.save("picture.jpg")
             print("capture screen success")
@@ -66,40 +75,40 @@ class MyBot():
         time.sleep(0.3)
         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
 
-    def startGame(self):
-        logging.info('Start Game')
-        self.mouseClick(self.posConnectWallet)
-        logging.info('Connect Wallet')
-        time.sleep(5)
-        self.mouseClick(self.posMetaSign)
-        logging.info('Connect Meta Sign')
-        time.sleep(10)
-        self.mouseClick(self.posHeroes)
-        time.sleep(1)
-        self.mouseClick(self.posHeroes)
-        logging.info('Select Button Heroes')
-        time.sleep(3)
-        self.mouseClick(self.posReset)
-        time.sleep(1)
-        self.mouseClick(self.posReset)
-        logging.info('Select Button Reset')
-        time.sleep(3)
-        self.mouseClick(self.posAll)
-        time.sleep(1)
-        self.mouseClick(self.posAll)
-        logging.info('Select Button All')
-        time.sleep(3)
-        self.mouseClick(self.posExitHeroes)
-        time.sleep(1)
-        self.mouseClick(self.posExitHeroes)
-        logging.info('Select Button Exit')
-        time.sleep(3)
-        self.mouseClick(self.posTreasureHunt)
-        time.sleep(1)
-        self.mouseClick(self.posTreasureHunt)
-        logging.info('Go to Game')
-        time.sleep(1)
-        self.start_time = int(time.time() * 1000)
+    # def startGame(self):
+    #     logging.info('Start Game')
+    #     self.mouseClick(self.posConnectWallet)
+    #     logging.info('Connect Wallet')
+    #     time.sleep(5)
+    #     self.mouseClick(self.posMetaSign)
+    #     logging.info('Connect Meta Sign')
+    #     time.sleep(10)
+    #     self.mouseClick(self.posHeroes)
+    #     time.sleep(1)
+    #     self.mouseClick(self.posHeroes)
+    #     logging.info('Select Button Heroes')
+    #     time.sleep(3)
+    #     self.mouseClick(self.posReset)
+    #     time.sleep(1)
+    #     self.mouseClick(self.posReset)
+    #     logging.info('Select Button Reset')
+    #     time.sleep(3)
+    #     self.mouseClick(self.posAll)
+    #     time.sleep(1)
+    #     self.mouseClick(self.posAll)
+    #     logging.info('Select Button All')
+    #     time.sleep(3)
+    #     self.mouseClick(self.posExitHeroes)
+    #     time.sleep(1)
+    #     self.mouseClick(self.posExitHeroes)
+    #     logging.info('Select Button Exit')
+    #     time.sleep(3)
+    #     self.mouseClick(self.posTreasureHunt)
+    #     time.sleep(1)
+    #     self.mouseClick(self.posTreasureHunt)
+    #     logging.info('Go to Game')
+    #     time.sleep(1)
+    #     self.start_time = int(time.time() * 1000)
 
     def loopSwapPage(self):
         now = int(time.time() * 1000)
